@@ -28,5 +28,5 @@ jobs:
       with:
         name: build-output
         path: |
-          dist
+          docs
         if-no-files-found: warn
