@@ -30,11 +30,11 @@ jobs:
       uses: SpicyPizza/create-envfile@v1.3
       with:
         envkey_VITE_KEY_TEST: ${{ secrets.VITE_KEY_TEST }}
-        directory: dist
+        directory: ./dist
     - name: Archive Results
       uses: actions/upload-artifact@v3
       with:
         name: build-output
         path: |
-          docs
+          dist
         if-no-files-found: warn
