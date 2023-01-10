@@ -21,9 +21,10 @@ jobs:
       run: npm ci
     - name: Build
       run: npm run build --if-present
-    - name: Create and populate .env file
-      env:
-        VITE_KEY_TEST: ${{ secrets.VITE_KEY_TEST }}
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1.3
+      with:
+        envkey_VITE_KEY_TEST: ${{ secrets.VITE_KEY_TEST }}
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
