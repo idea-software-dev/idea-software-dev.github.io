@@ -25,7 +25,7 @@ jobs:
       uses: SpicyPizza/create-envfile@v1.3
       with:
         envkey_VITE_KEY_TEST: ${{ secrets.VITE_KEY_TEST }}
-        directory: ./dist
+        directory: dist
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
