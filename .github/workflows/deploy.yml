@@ -26,6 +26,13 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1.3
+      with:
+        envkey_VITE_KEY_TEST: ${{ secrets.VITE_KEY_TEST }}
+        directory: ./dist
+        file_name: .env
+        fail_on_empty: false
     - name: Archive Results
       uses: actions/upload-artifact@v3
       with:
